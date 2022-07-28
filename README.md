@@ -3,8 +3,12 @@
 My KBD keyboard for Arch Linux, since there is no DHm variant of Colemak in the live iso
 
 ```bash
-curl https://raw.githubusercontent.com/Vzurxy/ArchLinux/main/us-colemak_dh.map.gz
-  --output /usr/share/kbd/keymaps/us-colemak_dh.map.gz ;
-  
-loadkeys /usr/share/kbd/keymaps/us-colemak_dh.map.gz
+# Sync repos and download git
+pacman -Sy && pacman -S git
+
+# Clone mod-dh repo from ColemakMods and use it
+git clone https://github.com/ColemakMods/mod-dh && cd mod-dh
+loadkeys console/colemak_dh_ansi_us.map
+
+# TODO: Make caps lock backspace
 ```
