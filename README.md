@@ -1,6 +1,33 @@
-# ArchLinux
+![ARCH](https://archlinux.org/static/logos/archlinux-logo-dark-scalable.518881f04ca9.svg)
 
-## Keyboard
+> A **personal** [Arch Linux](https://archlinux.org) guide for my setup.
+
+___
+
+**Table of Contents**
+
+* [Install](#install)
+* [Post Install](#post-install)
+
+# Install
+### Internet Connection
+
+Execute `iwctl` to get into the CLI helper
+* Scan wireless adapter `station wlan0 scan`
+* Get available networks `station wlan0 get-networks`
+* Connect to network `station wlan0 connect <SSID>`
+
+
+### Keyboard Configuration
+> The `archlinux-keyring` package may be outdated on your ISO, so you should run `pacman -Sy archlinux-keyring` to update it.
+
+Sync repositories with `pacman -Sy`, and download git `pacman -S git` 
+
+Git clone the (ColemakMods)[https://github.com/ColemakMods) mod-dh repository and cd into it
+`git clone https://github.com/ColemakMods/mod-dh && cd mod-dh`
+
+# Post Install
+
 
 ### Live ISO
 
