@@ -24,6 +24,14 @@ localectl set-x11-keymap us pc104 colemak_dh caps:backspace
 ## Essential Packages
 
 ```
+base
+bluez
+bluez-utils
+cups
+xdg-user-dirs
+xdg-utils
+linux
+linux-firmware
 sof-firmware
 btrfs-progs
 grub
