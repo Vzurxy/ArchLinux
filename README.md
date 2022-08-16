@@ -25,11 +25,6 @@ localectl set-x11-keymap us pc104 colemak_dh caps:backspace
 
 ```
 base
-bluez
-bluez-utils
-cups
-xdg-user-dirs
-xdg-utils
 linux
 linux-firmware
 sof-firmware
@@ -38,6 +33,13 @@ grub
 intel-ucode
 intel-media-driver
 mesa
+bluez
+bluez-utils
+cups
+xdg-user-dirs
+xdg-utils
+wezterm
+firefox
 ```
 
 ### Entire package list
