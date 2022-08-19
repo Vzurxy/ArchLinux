@@ -78,14 +78,18 @@ Change directory into `/mnt`
 Make btrfs subvolumes
 * `btrfs subvolume create @`
 * `btrfs subvolume create @home`
+* `btrfs subvolume create @snapshots`
+* `btrfs subvolume create @var_log`
 
 Unmount `/mnt`
 `umount /mnt`
 
 Mount the btrfs subvolumes, `nvme0n1p1` is my ESP
 * `mount -o noatime,space_cache=v2,compress=zstd,ssd,subvol=@ /dev/nvme0n1p5 /mnt`
-* Make the home and boot directories `mkdir /mnt/{boot,home}`
+* Make the home and boot directories `mkdir -p /mnt/{boot,home,var/log}`
 * `mount -o noatime,space_cache=v2,compress=zstd,ssd,subvol=@home /dev/nvme0n1p5 /mnt/home`
+* `mount -o noatime,space_cache=v2,compress=zstd,ssd,subvol=@snapshots /dev/nvme0n1p5 /mnt/.snapshots`
+* `mount -o noatime,space_cache=v2,compress=zstd,ssd,subvol=@var_log /dev/nvme0n1p5 /mnt/var/log`
 * `mount /dev/nvme0n1p1 /mnt/boot`
 
 ---
@@ -252,7 +256,7 @@ Remake the grub config with `grub-mkconfig -o /boot/grub/grub.cfg`
 ---
 # END
 # EVERYTHING BEYOND THIS IS JUST A TODO LIST
-# TODO: make plymouth and display manager along with system performance things like thermald and other stuff
+# TODO: make plymouth and things like thermald, SWITCH TO REFIND, USE SNAPPER
 
 ### Metal Install
 
